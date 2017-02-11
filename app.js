@@ -1,20 +1,24 @@
-var express = require('express');
+(function () {
+    'use strict';
 
-var app = express();
+    var express = require('express');
 
-var port = 5000;
+    var app = express();
 
-app.use(express.static('public'));
-app.use(express.static('src/views'));
+    var port = 5000;
 
-app.get('/', function(req, res) {
-    res.send('Hello world!');
-});
+    app.use(express.static('public'));
+    app.use(express.static('src/views'));
 
-app.get('/books', function(req, res) {
-    res.send('Hello books!');
-});
+    app.get('/', function (req, res) {
+        res.send('Hello world!');
+    });
 
-app.listen(port, function (err) {
-   console.log('running server on port ' + port); 
-});
+    app.get('/books', function (req, res) {
+        res.send('Hello books!');
+    });
+
+    app.listen(port, function (err) {
+        console.log('running server on port ' + port);
+    });
+}());
