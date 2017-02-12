@@ -5,7 +5,7 @@
 
     var app = express();
 
-    var port = 5000;
+    var port = process.env.PORT || 5000;
 
     app.use(express.static('public'));
     app.use(express.static('src/views'));
